@@ -5,7 +5,9 @@ description = "Prezent dla Antka, Boze Narodzenie 2024"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "cryptography>=44.0.0",
     "ruff>=0.8.4",
+    "tqdm>=4.67.1",
 ]
 
 [tool.ruff]
@@ -28,6 +30,7 @@ lint.ignore = [
 ]
 line-length = 88  # Same as Black.
 indent-width = 4  # Same as Black.
+exclude = ["src/questions.py"]
 
 [tool.ruff.format]
 quote-style = "double"  # Like Black, use double quotes for strings.

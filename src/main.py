@@ -1,7 +1,10 @@
+import cli
 
 
 def run():
-    print("Hello world!!!!")
+    cli.display_greeting()
+    cli.present_rules()
+    cli.run_quiz()
 
 
 if __name__ == "__main__":
