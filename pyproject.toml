@@ -1,0 +1,42 @@
+[project]
+name = "prezent-dla-antka-2024"
+version = "1"
+description = "Prezent dla Antka, Boze Narodzenie 2024"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "ruff>=0.8.4",
+]
+
+[tool.ruff]
+lint.select = [
+    "E",  # pydocstyle
+    "W",  # pydocstyle
+    "F",  # pyflakes
+    "I",  # isort
+    "N",  # pep8 naming
+    "UP",  # pyupgrade
+    "D",  # pydocstyle
+    "PD",  #pandas-vet
+]
+lint.ignore = [
+    "D100",  # Missing docstring in public module
+    "D104",  # Missing docstring in public package
+    "D105",  # Missing docstring in magic method
+    "D106",  # Missing docstring in public nested class
+    "D107",  # Missing docstring in __init__
+]
+line-length = 88  # Same as Black.
+indent-width = 4  # Same as Black.
+
+[tool.ruff.format]
+quote-style = "double"  # Like Black, use double quotes for strings.
+indent-style = "space"  # Like Black, indent with spaces, rather than tabs.
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"  # Accepts: "google", "numpy", or "pep257".
+
+[tool.pytest.ini_options]
+testpaths = [
+    "tests"
+]
