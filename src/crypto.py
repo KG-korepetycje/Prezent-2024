@@ -1,8 +1,14 @@
 import base64
+import hashlib
 
 from cryptography.fernet import Fernet
 from cryptography.hazmat.primitives import hashes
 from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
+
+
+def generate_hash(string: str, salt: str) -> str:
+    salted = string + salt
+    return hashlib.sha256(salted.encode()).hexdigest()
 
 
 def generate_key_from_password(password: str, salt: str) -> bytes:
